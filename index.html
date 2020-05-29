@@ -171,6 +171,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux添加用户02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/">Linux添加用户02</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/" class="archive-article-date">
+  	<time datetime="2020-05-29T08:00:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="用户添加命令useradd"><a href="#用户添加命令useradd" class="headerlink" title="用户添加命令useradd"></a>用户添加命令useradd</h4><h5 id="1-useradd命令格式"><a href="#1-useradd命令格式" class="headerlink" title="1.useradd命令格式"></a>1.useradd命令格式</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd [选项] 用户名</span><br></pre></td></tr></table></figure>
+
+<h6 id="选项："><a href="#选项：" class="headerlink" title="选项："></a>选项：</h6><ul>
+<li>-u UID： 手工指定用户的UID号  </li>
+<li>-d 家目录： 手工指定用户的家目录  </li>
+<li>-c 用户说明： 手工指定用户的说明 </li>
+<li>-g 组名： 手工指定用户的初始组  </li>
+<li>-G 组名： 指定用户的附加组  </li>
+<li>-s shell： 手工指定用户的登录shell。默认是/bin/bash </li>
+</ul>
+<h5 id="2-添加默认用户"><a href="#2-添加默认用户" class="headerlink" title="2.添加默认用户"></a>2.添加默认用户</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">useradd lamp </span><br><span class="line">grep "lamp" /etc/passwd </span><br><span class="line">grep "lamp" /etc/shadow </span><br><span class="line">grep "lamp" /etc/group </span><br><span class="line">grep "lamp" /etc/gshadow </span><br><span class="line">ll -d /home/lamp/ </span><br><span class="line">ll /var/spool/mail/lamp</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、指定选项添加用户"><a href="#3、指定选项添加用户" class="headerlink" title="3、指定选项添加用户"></a>3、指定选项添加用户</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd lamp1  </span><br><span class="line">useradd -u 550 -g lamp1 -G root -d /home/lamp1  \  -c "test user" -s /bin/bash lamp1</span><br></pre></td></tr></table></figure>
+
+<h5 id="4、用户默认值文件"><a href="#4、用户默认值文件" class="headerlink" title="4、用户默认值文件"></a>4、用户默认值文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/default/useradd </span><br><span class="line">    GROUP=100  # 用户默认组</span><br><span class="line">    HOME=/home # 用户家目录</span><br><span class="line">    INACTIVE=-1 # 密码过期宽限天数（ 7 ）</span><br><span class="line">    EXPIRE=  # 密码失效时间（ 8 ）</span><br><span class="line">    SHELL=/bin/bash # 默认 shell </span><br><span class="line">    SKEL=/etc/skel # 模板目录</span><br><span class="line">    CREATE_MAIL_SPOOL=yes # 是否建立邮箱</span><br><span class="line">cat /etc/login.defs  </span><br><span class="line">	PASS_MAX_DAYS 99999 # 密码有效期（ 5 ）</span><br><span class="line">    PASS_MIN_DAYS 0 # 密码修改间隔（ 4 ）</span><br><span class="line">    PASS_MIN_LEN 5 # 密码最小 5 位（ PAM ）</span><br><span class="line">    PASS_WARN_AGE 7 # 密码到期警告（ 6 ）</span><br><span class="line">    UID_MIN  500 # 最小和最大 UID 范围</span><br><span class="line">    GID_MAX  60000 </span><br><span class="line">    ENCRYPT_METHOD SHA512 # 加密模式</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改用户密码passwd"><a href="#修改用户密码passwd" class="headerlink" title="修改用户密码passwd"></a>修改用户密码passwd</h4><h5 id="1-passwd命令格式"><a href="#1-passwd命令格式" class="headerlink" title="1.passwd命令格式"></a>1.passwd命令格式</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd [选项] 用户名</span><br></pre></td></tr></table></figure>
+
+<h6 id="选项：-1"><a href="#选项：-1" class="headerlink" title="选项："></a>选项：</h6><ul>
+<li>-S  查询用户密码的密码状态。仅root用户  可用。 </li>
+<li>-l  暂时锁定用户。仅root用户可用  </li>
+<li>-u  解锁用户。仅root用户可用  </li>
+<li>–stdin 可以通过管道符输出的数据作为用户的密码。 </li>
+</ul>
+<h5 id="2、查看密码状态"><a href="#2、查看密码状态" class="headerlink" title="2、查看密码状态"></a>2、查看密码状态</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">passwd -S lamp </span><br><span class="line">lamp PS 2013-01-06 0 99999 7 -1  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 用户名密码设定时间（ 2013-01-06 ）密码修改间隔时间（ 0 ）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 密码 有效期（ 99999 ）警告 时间（ 7 ）密码不失效（ -1 ）</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3、锁定用户和解锁用户"><a href="#3、锁定用户和解锁用户" class="headerlink" title="3、锁定用户和解锁用户"></a>3、锁定用户和解锁用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd -l lamp </span><br><span class="line">passwd -u lamp</span><br></pre></td></tr></table></figure>
+
+<h5 id="4、使用字符串作为用户的密码"><a href="#4、使用字符串作为用户的密码" class="headerlink" title="4、使用字符串作为用户的密码"></a>4、使用字符串作为用户的密码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;123&quot; | passwd --stdin lamp</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改用户信息usermod"><a href="#修改用户信息usermod" class="headerlink" title="修改用户信息usermod"></a>修改用户信息usermod</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod [选项] 用户名</span><br></pre></td></tr></table></figure>
+
+<h6 id="选项：-2"><a href="#选项：-2" class="headerlink" title="选项："></a>选项：</h6><ul>
+<li>-u UID： 修改用户的UID号</li>
+<li>-c 用户说明： 修改用户的说明信息</li>
+<li>-G 组名： 修改用户的附加组</li>
+<li>-L： 临时锁定用户（Lock）</li>
+<li>-U： 解锁用户锁定（Unlock）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usermod -c "test user" lamp</span><br><span class="line"><span class="meta">#</span><span class="bash">修改用户的说明</span></span><br><span class="line">usermod -G root lamp</span><br><span class="line"><span class="meta">#</span><span class="bash">把lamp用户加入root组</span></span><br><span class="line">usermod -L lamp</span><br><span class="line"><span class="meta">#</span><span class="bash">锁定用户</span></span><br><span class="line">usermod -U lamp</span><br><span class="line"><span class="meta">#</span><span class="bash">解锁用户</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="修改用户密码状态chage"><a href="#修改用户密码状态chage" class="headerlink" title="修改用户密码状态chage"></a>修改用户密码状态chage</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chage [选项] 用户名 选项</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-l： 列出用户的详细密码状态</li>
+<li>-d 日期： 修改密码最后一次更改日期（shadow3字段）-m 天数： 两次密码修改间隔（4字段）</li>
+<li>-M 天数： 密码有效期（5字段）</li>
+<li>-W 天数： 密码过期前警告天数（6字段）</li>
+<li>-I 天数： 密码过后宽限天数（7字段）</li>
+<li>-E 日期： 账号失效时间（8字段）</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chage -d 0 lamp  </span><br><span class="line"><span class="meta">#</span><span class="bash">这个命令其实是把密码修改日期归0了（shadow第3字段）<span class="comment">#这样用户一登陆就要修改密码</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除用户userdel-用户切换命令su"><a href="#删除用户userdel-用户切换命令su" class="headerlink" title="删除用户userdel 用户切换命令su"></a>删除用户userdel 用户切换命令su</h4><h5 id="1-手工删除用户"><a href="#1-手工删除用户" class="headerlink" title="1.手工删除用户"></a>1.手工删除用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;passwd </span><br><span class="line">vi &#x2F;etc&#x2F;shadow </span><br><span class="line">vi &#x2F;etc&#x2F;group </span><br><span class="line">vi &#x2F;etc&#x2F;gshadow </span><br><span class="line">rm -rf &#x2F;var&#x2F;spool&#x2F;mail&#x2F;lamp </span><br><span class="line">rm -rf &#x2F;home&#x2F;lamp&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-查看用户ID"><a href="#2-查看用户ID" class="headerlink" title="2.查看用户ID"></a>2.查看用户ID</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id 用户名</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-切换用户身份su"><a href="#3-切换用户身份su" class="headerlink" title="3.切换用户身份su"></a>3.切换用户身份su</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [选项] 用户名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>： 选项只使用“-”代表连带用户的环境  变量一起切换  </li>
+<li>-c 命令： 仅执行一次命令，而不切换用户身份</li>
+</ul>
+<pre><code class="shell">su  –  root 
+<span class="meta">#</span><span class="bash">切换成root</span>
+su - root -c "useradd user3" 
+<span class="meta">#</span><span class="bash">不切换成root，但是执行useradd命令添加user3用户</span></code></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux添加用户01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -252,6 +381,16 @@
 <li>第二字段：组密码 </li>
 <li>第三字段：组管理员用户名 </li>
 <li>第四字段：组中附加用户</li>
+</ul>
+<h4 id="用户管理相关文件"><a href="#用户管理相关文件" class="headerlink" title="用户管理相关文件"></a>用户管理相关文件</h4><h5 id="用户的家目录"><a href="#用户的家目录" class="headerlink" title="用户的家目录"></a>用户的家目录</h5><ul>
+<li>普通用户：/home/用户名/，所有者和所属 组都是此用户，权限是700 </li>
+<li>超级用户：/root/，所有者和所属组都是 root用户，权限是550 </li>
+</ul>
+<h5 id="用户的邮箱"><a href="#用户的邮箱" class="headerlink" title="用户的邮箱"></a>用户的邮箱</h5><ul>
+<li>/var/spool/mail/用户名/ </li>
+</ul>
+<h5 id="用户模板目录"><a href="#用户模板目录" class="headerlink" title="用户模板目录"></a>用户模板目录</h5><ul>
+<li>/etc/skel/ </li>
 </ul>
 
       

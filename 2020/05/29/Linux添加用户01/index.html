@@ -16,7 +16,7 @@
 <meta property="og:description" content="用户信息文件1&#x2F;etc&#x2F;passwd   第1字段：用户名称  第2字段：密码标志  第3字段：UID（用户ID）  0：   超级用户  1-499：  系统用户（伪用户）  500-65535： 普通用户    第4字段：GID（用户初始组ID) 第5字段：用户说明  第6字段：家目录  普通用户：&#x2F;home&#x2F;用户名&#x2F;  普通用户：&#x2F;home&#x2F;用户名&#x2F;    第7字段：登录">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-29T07:02:49.000Z">
-<meta property="article:modified_time" content="2020-05-29T07:06:14.768Z">
+<meta property="article:modified_time" content="2020-05-29T07:17:25.824Z">
 <meta property="article:author" content="加油小林哥">
 <meta property="article:tag" content="labview">
 <meta property="article:tag" content="Linux">
@@ -253,6 +253,16 @@
 <li>第三字段：组管理员用户名 </li>
 <li>第四字段：组中附加用户</li>
 </ul>
+<h4 id="用户管理相关文件"><a href="#用户管理相关文件" class="headerlink" title="用户管理相关文件"></a>用户管理相关文件</h4><h5 id="用户的家目录"><a href="#用户的家目录" class="headerlink" title="用户的家目录"></a>用户的家目录</h5><ul>
+<li>普通用户：/home/用户名/，所有者和所属 组都是此用户，权限是700 </li>
+<li>超级用户：/root/，所有者和所属组都是 root用户，权限是550 </li>
+</ul>
+<h5 id="用户的邮箱"><a href="#用户的邮箱" class="headerlink" title="用户的邮箱"></a>用户的邮箱</h5><ul>
+<li>/var/spool/mail/用户名/ </li>
+</ul>
+<h5 id="用户模板目录"><a href="#用户模板目录" class="headerlink" title="用户模板目录"></a>用户模板目录</h5><ul>
+<li>/etc/skel/ </li>
+</ul>
 
       
 
@@ -345,6 +355,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux添加用户02
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
