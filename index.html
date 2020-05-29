@@ -24,7 +24,7 @@
     <link rel="alternative" href="/atom.xml" title="加油小林哥的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="https://s1.ax1x.com/2020/05/29/tn0Dk6.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -60,15 +60,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/null">吉他</a></li>
-	        
-				<li><a href="/">主页</a></li>
+				<li><a href="https://s1.ax1x.com/2020/05/29/tuVzXd.jpg" target="_blank" rel="noopener">吉他</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">Linux</a></li>
 	        
-				<li><a href="/null">Labview</a></li>
+				<li><a href="/">Labview</a></li>
 	        
-				<li><a href="/null">数据结构</a></li>
+				<li><a href="/">数据结构</a></li>
 	        
 			</ul>
 		</nav>
@@ -128,8 +126,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -146,15 +142,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="/null">吉他</a></li>
+					<li style="width: 25%"><a href="https://s1.ax1x.com/2020/05/29/tuVzXd.jpg" target="_blank" rel="noopener">吉他</a></li>
 		        
-					<li style="width: 20%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">Linux</a></li>
 		        
-					<li style="width: 20%"><a href="/tags/%E9%9A%8F%E7%AC%94/">Linux</a></li>
+					<li style="width: 25%"><a href="/">Labview</a></li>
 		        
-					<li style="width: 20%"><a href="/null">Labview</a></li>
-		        
-					<li style="width: 20%"><a href="/null">数据结构</a></li>
+					<li style="width: 25%"><a href="/">数据结构</a></li>
 		        
 				</ul>
 			</nav>
@@ -170,6 +164,119 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Linux的运行级别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/Linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/">Linux的运行级别</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/29/Linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-05-29T15:08:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Linux运行级别"><a href="#Linux运行级别" class="headerlink" title="Linux运行级别"></a>Linux运行级别</h3><table>
+<thead>
+<tr>
+<th align="center">运行级别</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="left">关机</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="left">单用户模式，可以想象为windows的安全模式，主要用于系统修复</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">不完全的命令行模式，不含NFS服务</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">完全的命令行模式，就是标准字符界面</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">系统保留</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">图形模式</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="left">重启动</td>
+</tr>
+</tbody></table>
+<p>查看运行级别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">runlevel</span><br><span class="line"><span class="meta">#</span><span class="bash">查看运行级别命令</span></span><br><span class="line">init 运行级别</span><br><span class="line"><span class="meta">#</span><span class="bash">改变运行级别命令</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我们不小心忘记Linux的root密码，怎么找回？</p>
+<p>思路：进入单用户模式，然后修改root密码。因为进入单用户模式，root不需要密码就可以登录</p>
+<p>具体步骤：</p>
+<p>开机</p>
+<ol>
+<li>在引导时输入回车键</li>
+<li>看到一个界面输入e</li>
+<li>看到一个新界面，选中第二行（编辑内核）再输入e，在这行的最后输入1</li>
+<li>再输入一个回车键</li>
+<li>再次输入一个b，这时就会进入到单用户模式</li>
+<li>这时，我们就可以使用pwsswd修改root用户的密码</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/29/Linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Linux添加用户02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -692,7 +799,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很高兴和大家一起分享&lt;br&gt;希望大家在B站多多投币点赞收藏呀&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">我是一16级名非科班的本科毕业生，喜欢java编程，LABVIEW编程，无聊时也喜欢分享吉他&lt;br&gt;  很高兴和大家一起分享&lt;br&gt;  希望大家在B站多多投币点赞收藏呀&lt;br&gt;  谢谢大家</div>
   	  	
     	</section>
     
