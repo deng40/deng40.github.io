@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/5 | 加油小林哥的博客</title>
+  <title>【MySQLDML数据库操作语言】 | 加油小林哥的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是加油小林哥的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="加油小林哥的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/05/index.html">
+  <meta name="description" content="DML数据库操作语言插入：insert 修改：update 删除：delete 一、插入语句方式一1insert into 表名(列名,……) values (值1,……);   插入的值类型要与列的类型一致或者兼容 不可以为null放入列必须插入值，可以为null的列可以不插 列的顺序可以调换，但是必须一一对应 列数必须与值的个数一致 可以省略列名，默认为所有列，而且列的顺序和表中的顺序一致">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【MySQLDML数据库操作语言】">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/%E3%80%90MySQLDML%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%E3%80%91/index.html">
 <meta property="og:site_name" content="加油小林哥的博客">
-<meta property="og:description" content="这是加油小林哥的博客">
+<meta property="og:description" content="DML数据库操作语言插入：insert 修改：update 删除：delete 一、插入语句方式一1insert into 表名(列名,……) values (值1,……);   插入的值类型要与列的类型一致或者兼容 不可以为null放入列必须插入值，可以为null的列可以不插 列的顺序可以调换，但是必须一一对应 列数必须与值的个数一致 可以省略列名，默认为所有列，而且列的顺序和表中的顺序一致">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-30T15:59:39.000Z">
+<meta property="article:modified_time" content="2020-05-30T16:05:29.389Z">
 <meta property="article:author" content="加油小林哥">
 <meta property="article:tag" content="labview">
 <meta property="article:tag" content="Linux">
@@ -163,238 +165,206 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-【MySQLDML数据库操作语言】" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      【MySQLDML数据库操作语言】
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/%E3%80%90MySQLDML%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%E3%80%91/" class="archive-article-date">
+
+        
+        <a href="/2020/05/30/%E3%80%90MySQLDML%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%E3%80%91/" class="archive-article-date">
   	<time datetime="2020-05-30T15:59:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/%E3%80%90MySQLDML%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%E3%80%91/">【MySQLDML数据库操作语言】</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="DML数据库操作语言"><a href="#DML数据库操作语言" class="headerlink" title="DML数据库操作语言"></a>DML数据库操作语言</h4><p>插入：insert</p>
+<p>修改：update</p>
+<p>删除：delete</p>
+<h5 id="一、插入语句"><a href="#一、插入语句" class="headerlink" title="一、插入语句"></a>一、插入语句</h5><h6 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(列名,……) values (值1,……);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<ol>
+<li>插入的值类型要与列的类型一致或者兼容</li>
+<li>不可以为null放入列必须插入值，可以为null的列可以不插</li>
+<li>列的顺序可以调换，但是必须一一对应</li>
+<li>列数必须与值的个数一致</li>
+<li>可以省略列名，默认为所有列，而且列的顺序和表中的顺序一致</li>
+</ol>
+<h6 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名</span><br><span class="line">set 列名&#x3D;值,列名&#x3D;值,……</span><br></pre></td></tr></table></figure>
 
+<h6 id="两种方式的对比"><a href="#两种方式的对比" class="headerlink" title="两种方式的对比"></a>两种方式的对比</h6><ol>
+<li><p>方式一支持插入多行，方式二不支持</p>
+</li>
+<li><p>方式一支持子查询，方式二不支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(列名1,列名2,……) select 值1,值2,……;</span><br></pre></td></tr></table></figure>
+
+<p>多行查询可以使用联合查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名</span><br><span class="line">select 值1,值2,…… union</span><br><span class="line">select 值1,值2,…… union</span><br><span class="line">select 值1,值2,…… union</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h5 id="二、修改语句"><a href="#二、修改语句" class="headerlink" title="二、修改语句"></a>二、修改语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update 表名</span><br><span class="line">set 列名&#x3D;值,列名&#x3D;值,……</span><br><span class="line">where 筛选条件</span><br></pre></td></tr></table></figure>
+
+<p>SQL92语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update 表1 别名 , 表2, 别名</span><br><span class="line">set 列 &#x3D; 值,……</span><br><span class="line">where 连接条件</span><br><span class="line">and 筛选条件</span><br></pre></td></tr></table></figure>
+
+<p>SQL99语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">update 表 别名 </span><br><span class="line">连接类型[inner|left|right join] 表2 别名 on 连接条件</span><br><span class="line">set 列&#x3D;值,列&#x3D;值,</span><br><span class="line">where 筛选条件</span><br></pre></td></tr></table></figure>
+
+<h5 id="三、删除语句"><a href="#三、删除语句" class="headerlink" title="三、删除语句"></a>三、删除语句</h5><p>方式一、delete</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 where 筛选条件 #删除表中满足条件的行</span><br></pre></td></tr></table></figure>
+
+<p>方式二、truncat（清空数据）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table 表名;#删除整个表</span><br></pre></td></tr></table></figure>
+
+<h4 id="delete-与-truncate-的比较"><a href="#delete-与-truncate-的比较" class="headerlink" title="delete 与 truncate 的比较"></a>delete 与 truncate 的比较</h4><ol>
+<li>delete 可以加where条件，truncate不能加</li>
+<li>delete 删除，效率高一丢度</li>
+<li>加入要删除的表中有自增长列，如果使用delete，删除后在插入数据，自增长列的值从断点处开始；而truncate删除后再插入数据，自增长列的值从1开始</li>
+<li>truncate删除没有返回值，delete删除有返回值</li>
+<li>truncate删除不能回滚，delete删除可以回滚</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>和小林哥一起加油吧<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://s1.ax1x.com/2020/05/29/tuVzXd.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/30/%E3%80%90MySQLDML%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80%E3%80%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/MySQL%E6%9F%A5%E8%AF%A2%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-05-30T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/30/MySQL%E6%9F%A5%E8%AF%A2%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL查询总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/MySQL%E6%9F%A5%E8%AF%A2%E6%80%BB%E7%BB%93/">MySQL查询总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-05-30T02:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E7%B1%BB%E5%9E%8B/">linux系统中文件的几种类型</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-29T16:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/">KMP算法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/29/Linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-05-29T15:08:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/29/Linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB/">Linux的运行级别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/" class="archive-article-date">
-  	<time datetime="2020-05-29T08:00:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B702/">Linux添加用户02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B701/" class="archive-article-date">
-  	<time datetime="2020-05-29T07:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/29/Linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B701/">Linux添加用户01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-05-29T03:54:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">MySQL的常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -417,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
