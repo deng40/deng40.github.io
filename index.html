@@ -165,6 +165,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux-CentOS7打开端口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/Linux-CentOS7%E6%89%93%E5%BC%80%E7%AB%AF%E5%8F%A3/">【Linux】-CentOS7打开端口</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/31/Linux-CentOS7%E6%89%93%E5%BC%80%E7%AB%AF%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2020-05-31T05:10:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【Linux】CentOS7打开端口</p>
+<h4 id="1、开放端口"><a href="#1、开放端口" class="headerlink" title="1、开放端口"></a>1、开放端口</h4><p> firewall-cmd –zone=public –add-port=5672/tcp –permanent   # 开放5672端口<br> firewall-cmd –zone=public –remove-port=5672/tcp –permanent  #关闭5672端口<br> firewall-cmd –reload   # 配置立即生效</p>
+<h4 id="2、查看防火墙所有开放的端口"><a href="#2、查看防火墙所有开放的端口" class="headerlink" title="2、查看防火墙所有开放的端口"></a>2、查看防火墙所有开放的端口</h4><p> firewall-cmd –zone=public –list-ports</p>
+<h4 id="3-、关闭防火墙"><a href="#3-、关闭防火墙" class="headerlink" title="3.、关闭防火墙"></a>3.、关闭防火墙</h4><p> 如果要开放的端口太多，嫌麻烦，可以关闭防火墙，安全性自行评估<br> systemctl stop firewalld.service</p>
+<h4 id="4、查看防火墙状态"><a href="#4、查看防火墙状态" class="headerlink" title="4、查看防火墙状态"></a>4、查看防火墙状态</h4><p> firewall-cmd –state</p>
+<h4 id="5、查看监听的端口"><a href="#5、查看监听的端口" class="headerlink" title="5、查看监听的端口"></a>5、查看监听的端口</h4><p> netstat -lnpt</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/31/Linux-CentOS7%E6%89%93%E5%BC%80%E7%AB%AF%E5%8F%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL的插入删除" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
