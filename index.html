@@ -165,6 +165,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-【数据结构与算法】递归问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/01/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E3%80%91%E9%80%92%E5%BD%92%E9%97%AE%E9%A2%98/">【数据结构与算法】递归问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/01/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E3%80%91%E9%80%92%E5%BD%92%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-06-01T00:26:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="【数据结构与算法】递归求解阶乘"><a href="#【数据结构与算法】递归求解阶乘" class="headerlink" title="【数据结构与算法】递归求解阶乘"></a>【数据结构与算法】递归求解阶乘</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> i * func(i - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="【数据结构与算法】递归求解斐波那契数列的第n项-一"><a href="#【数据结构与算法】递归求解斐波那契数列的第n项-一" class="headerlink" title="【数据结构与算法】递归求解斐波那契数列的第n项(一)"></a>【数据结构与算法】递归求解斐波那契数列的第n项(一)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n == <span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(n == <span class="number">1</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> Fibonacci(n-<span class="number">1</span>) + Fibonacci(n-<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//算法的空间复杂度为n^2</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="【数据结构与算法】递归求解斐波那契数列的第n项-二"><a href="#【数据结构与算法】递归求解斐波那契数列的第n项-二" class="headerlink" title="【数据结构与算法】递归求解斐波那契数列的第n项(二)"></a>【数据结构与算法】递归求解斐波那契数列的第n项(二)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fibonacci2</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,a=<span class="number">0</span>,b=<span class="number">1</span>,sum;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;n<span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = a + b;</span><br><span class="line">		a = b;</span><br><span class="line">		b= sum;</span><br><span class="line">	&#125;</span><br><span class="line">	rturn sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 算法的时间复杂度为n</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="【数据结构与算法】递归青蛙跳台阶"><a href="#【数据结构与算法】递归青蛙跳台阶" class="headerlink" title="【数据结构与算法】递归青蛙跳台阶"></a>【数据结构与算法】递归青蛙跳台阶</h4><ul>
+<li>题目描述：    一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">JumpFloor</span><span class="params">(<span class="keyword">int</span> target)</span> </span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="comment">//假设青蛙从第n个台阶开始跳</span></span><br><span class="line">       <span class="keyword">if</span>(target &lt;<span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">if</span>(target==<span class="number">1</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">if</span>(target==<span class="number">2</span>)<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">       <span class="keyword">return</span> JumpFloor(target-<span class="number">1</span>)+JumpFloor(target-<span class="number">2</span>);</span><br><span class="line">   &#125;</span><br><span class="line"><span class="comment">//原理同上</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="【数据结构与算法】递归变态青蛙跳台阶"><a href="#【数据结构与算法】递归变态青蛙跳台阶" class="headerlink" title="【数据结构与算法】递归变态青蛙跳台阶"></a>【数据结构与算法】递归变态青蛙跳台阶</h4><ul>
+<li><p>题目描述：一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">JumpFloorII</span><span class="params">(<span class="keyword">int</span> target)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(target==<span class="number">1</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>*JumpFloorII(target-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/01/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E3%80%91%E9%80%92%E5%BD%92%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nginx-常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -668,7 +746,7 @@ nginx -s reload      当配置信息发生修改时,重新载入nginx,才能生�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/">KMP算法</a>
+      <a class="article-title" href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/">【算法与数据结构】KMP算法</a>
     </h1>
   
 
@@ -1102,92 +1180,10 @@ su - root -c "useradd user3"
 
 
   
-    <article id="post-MySQL的常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">MySQL的常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-05-29T03:54:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="常用的MySQL命令"><a href="#常用的MySQL命令" class="headerlink" title="常用的MySQL命令"></a>常用的MySQL命令</h1><p>在Linux中查看MySQL的状态信息</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulnp | grep 'mysql'</span><br></pre></td></tr></table></figure>
-
-<p>本地登录MySQL</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySQL -u root -p密码</span><br></pre></td></tr></table></figure>
-
-<p>远程登录MySQL</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySQL -h 远程服务器的ip地址 -P 端口(3306) -u 用户名 -p密码</span><br></pre></td></tr></table></figure>
-
-<p>查看数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
-
-<p>使用库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 库名;</span><br></pre></td></tr></table></figure>
-
-<p>查看所有表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br></pre></td></tr></table></figure>
-
-<p>查看表结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC 表名;</span><br></pre></td></tr></table></figure>
-
-<p>查看表中的索引    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW INDEX FROM 表名;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/29/MySQL%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
